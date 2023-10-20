@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import Login from './Login';
-import Register from './Register';
-import Home from './Home';
+import Login from './Components/Login';
+import Register from './Components/Register';
+import Home from './Components/Home';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -23,7 +23,7 @@ const App = () => {
     setUsername(name);
     setShowLogin(false);
   };
-
+// commit
   const handleRegister = (name) => {
     setUsername(name);
     setShowRegister(false);
