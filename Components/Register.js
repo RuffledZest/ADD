@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { Image } from 'react-native';
+import { View, SafeAreaView ,Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const Register = ({ handleRegister }) => {
   const [email, setEmail] = useState('');
@@ -12,10 +13,15 @@ const Register = ({ handleRegister }) => {
 
   return (
     <View style={styles.container}>
-      {/* register and image components*/}
-      <View style={styles.registerContainer}>
-      <Text style={styles.logo}>Register</Text>
+      {/* main logo */}
+      <View style={styles.mainLogocontainer}>
+        <Image style={styles.mainlogo} source={require("../assets/mainlogo.png")}/>
       </View>
+      {/* register and image components*/}
+      <SafeAreaView style={styles.registerContainer}>
+      <Text style={styles.logo}>Register</Text>
+      <Image  style={styles.imagelogo} source={require("../assets/chessimage.jpg")}/>
+      </SafeAreaView>
 
       {/* input View components */}
       <View style={styles.inputViewparent}>
@@ -49,20 +55,48 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
   },
+  mainLogocontainer:{
+    display:"flex",
+      alignItems:"center",
+      marginTop:55,
+      width:"100%",
+      height:80,
+      // borderColor:"#FF0000",
+      // borderWidth:2,
+  },
+  mainlogo:{
+     width:105,
+     height:65
+  },
   registerContainer: {
     display:"flex",
+    width:"100%",
+    height:150,
+    // borderColor:"#000000",
+    // borderWidth:2,
     flexDirection:"row",
     alignItems:"center",
     justifyContent:"space-between"
   },
   logo: {
-    marginTop:55,
+    // borderColor:"#0000FF",
+    // borderWidth:2,
+    marginLeft:55,
+    marginTop:15,
     fontSize: 40,
     color: '#000000',
     marginBottom: 40,
     fontFamily:""
   },
+  imagelogo:{
+    marginTop:-80,
+    // borderColor:"#0000FF",
+    // borderWidth:2,
+    width:150,
+    height:160
+  },
   inputViewparent:{
+     marginTop:-35,
      width:"100%",
      display:"flex",
      alignItems:"center"
@@ -85,7 +119,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 40,
+    marginTop: 30,
     marginBottom: 10,
   },
   registerText: {
