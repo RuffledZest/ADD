@@ -1,0 +1,82 @@
+/* Reset some default styles for consistent cross-browser rendering */
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color and font family for the entire page */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the header section */
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Create a navigation menu */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Style the main content section */
+.main-content {
+  padding: 20px;
+}
+
+/* Add a call-to-action section */
+.cta {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style the footer section */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Add responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .navbar a {
+    margin: 0 5px;
+  }
+
+  .cta h2 {
+    font-size: 20px;
+  }
+}
