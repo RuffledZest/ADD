@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { Image } from 'react-native';
 import { View, SafeAreaView ,Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+// import { useNavigation } from '@react-navigation/native';
 
-const Register = ({ handleRegister }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const handleRegisterPress = () => {
-     handleRegister(email);
-  };
-
+const Register = ({navigation}) => {
+  const nextpagehandler=()=>{
+    navigation.navigate('register2'); 
+  }
   return (
     <View style={styles.container}>
       {/* main logo */}
@@ -30,16 +26,15 @@ const Register = ({ handleRegister }) => {
           style={styles.inputText}
           placeholder="Enter your Email/ Phone Number"
           placeholderTextColor="#003f5c"
-          onChangeText={(text) => setEmail(text)}
         />
         </View>
       </View>
       {/* register btn */}
-      <TouchableOpacity style={styles.registerBtn} onPress={handleRegisterPress}>
-        <Text style={styles.registerText}>SIGN UP</Text>
+      <TouchableOpacity style={styles.registerBtn} onPress={nextpagehandler}>
+        <Text style={styles.registerText} >SIGN UP</Text>
       </TouchableOpacity>
 
-      {/* privacy policy text */}
+      {/* privacy policy text */ }
       <View>
         <Text>By signing up,you agree To this app Terms of Services and Privacy Policy.</Text>
       </View>
@@ -61,6 +56,7 @@ const styles = StyleSheet.create({
       marginTop:55,
       width:"100%",
       height:80,
+     
       // borderColor:"#FF0000",
       // borderWidth:2,
   },
@@ -119,7 +115,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 30,
+    marginTop: 20,
     marginBottom: 10,
   },
   registerText: {
