@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
 import React from "react";
 import Bottomnavigation from "./Bottomnavigation";
 
@@ -22,7 +22,7 @@ const MyProfile = ({ navigation }) => {
         />
       </View>
 
-      {/*  */}
+      {/*  write me section*/}
       <View style={styles.aboutme}>
         {/* mainname and pic */}
         <View style={styles.dpName}>
@@ -33,7 +33,7 @@ const MyProfile = ({ navigation }) => {
           {/* username */}
           <View>
             <Text style={styles.username}>User Blinky</Text>
-            <Text style={{ fontSize: 20 }}>@Blinky_aka_destroyer</Text>
+            <Text style={{ fontSize: 18 }}>@Blinky_aka_destroyer</Text>
           </View>
         </View>
 
@@ -53,14 +53,45 @@ const MyProfile = ({ navigation }) => {
               style={styles.icons}
             />
           </View>
-          <Text style={styles.myself}>
+          <View style={styles.myself}>
+          <Text style={styles.myselftxt} >
             Hi I am the Designer Guy, I barely passed my finals, but hey! at
             least I have been selected for prestigious hackathons like
             hack-o-octo.
           </Text>
+          <View style={{marginTop:5}}>
+          <Text style={styles.dummyedit}>Edit Profile</Text>
+          </View>
+          </View>
+          
         </View>
       </View>
 
+     {/* Posts && sameple work */}
+      <View style={styles.btns}>
+        <TouchableOpacity>
+            <Text style={styles.btn}>Posts</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+            <Text style={styles.btn}>Sample Work</Text>
+        </TouchableOpacity>
+      </View>
+
+
+      {/* cards */}
+      {/* <ScrollView> */}
+        <View style={styles.grid}>
+        <View style={styles.postholder}>
+          <Image style={styles.post} source={require("../assets/post1.jpg")}/>
+        </View>
+      <View style={styles.postholder}>
+         <Image style={styles.post} source={require("../assets/post2.jpg")}/>
+      </View>
+        </View>
+      
+      {/* </ScrollView> */}
+      
+     {/* bottom navigation */}
       <View style={styles.navbar}>
         <Bottomnavigation navigator={navigation} />
       </View>
@@ -88,6 +119,40 @@ const styles = StyleSheet.create({
     // borderColor:"#000000",
     width: "100vw",
   },
+  grid:{
+      display:"flex",
+      flexDirection:"row",
+    //   borderWidth:2,
+    //   borderColor:"#000000",
+       justifyContent:"space-evenly",
+      marginTop:30,
+    },
+    postholder:{
+        // width:"100%",
+     display:"flex",
+     alignItems:"center",
+     justifyContent:"center"
+    },
+  post:{
+    // borderWidth:2,
+    // borderColor:"#000000",
+    width:150,
+    height:150
+  },
+  btns:{
+    display:"flex",
+    flexDirection:"row",
+    marginTop:25,
+    justifyContent:"space-evenly"
+  },
+  btn:{
+    backgroundColor:"#000000",
+    color:"#FFFFFF",
+    width:150,
+    textAlign:"center",
+    borderRadius:30,
+    padding:10
+  },
   mainLogocontainer: {
     display: "flex",
     flexDirection: "row",
@@ -96,6 +161,16 @@ const styles = StyleSheet.create({
     marginTop: 55,
     width: "100%",
     height: 80,
+  },
+  dummyedit:{
+   backgroundColor:"#000000",
+   color:"#FFFFFF",
+   width:120,
+   paddingLeft:20,
+   padding:10,
+   borderRadius:30,
+   height:40,
+    
   },
   backarrow: {
     width: 32,
@@ -134,7 +209,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     gap: 50,
-    marginTop: -37,
+    marginTop: -38,
     alignContent: "center",
   },
   imagecontainer: {
@@ -155,11 +230,15 @@ const styles = StyleSheet.create({
   myself: {
     // borderWidth:2,
     // borderColor:"#000000",
-    fontSize: 18,
     padding: 13,
     textAlign: "left",
+    fontSize: 18,
     width: 280,
     height: 180,
+  },
+  myselftxt:{
+    textAlign: "left",
+    fontSize: 18,
   },
   dpContainer: {
     // borderWidth:2,
