@@ -7,8 +7,8 @@ const Login = ({navigation}) => {
   const homepagehandler=()=>{
     navigation.navigate('home');
   }
-  const nextpagehandler=()=>{ 
-    navigation.navigate('register2'); 
+  const mainpagehandler=()=>{ 
+    navigation.navigate('mainpage'); 
   }
   return (
     <View style={styles.container}>
@@ -26,32 +26,36 @@ const Login = ({navigation}) => {
       </SafeAreaView>
 
       {/* input View components */}
-      <View style={styles.inputViewparent1}>
+      <View style={styles.inputViewparent}>
+        <Text style={styles.labelText}>Username or Email address</Text>
         <View style={styles.inputView}>
         <TextInput
           style={styles.inputText}
-          placeholder="Enter your Email/ Phone Number"
+          placeholder="Enter your Username/ Email address"
           placeholderTextColor="#003f5c"
         />
         </View>
       </View>
+
+      {/* password */}
       <View style={styles.inputViewparent}>
+        <Text style={styles.labelText}>Password</Text>
         <View style={styles.inputView}>
         <TextInput
           style={styles.inputText}
-          placeholder="Enter your Password"
+          placeholder="Password"
           placeholderTextColor="#003f5c"
         />
         </View>
       </View>
       {/* register btn */}
-      <TouchableOpacity style={styles.registerBtn} onPress={nextpagehandler}>
-        <Text style={styles.registerText} >SIGN UP</Text>
+      <TouchableOpacity style={styles.registerBtn} onPress={mainpagehandler}>
+        <Text style={styles.registerText} >LOG IN</Text>
       </TouchableOpacity>
 
       {/* privacy policy text */ }
       <View>
-        <Text>By signing up,you agree To this app Terms of Services and Privacy Policy.</Text>
+        <Text style={{textDecorationLine:"underline"}}>FORGOT YOUR PASSWORD?</Text>
       </View>
     </View>
   );
@@ -117,31 +121,32 @@ const styles = StyleSheet.create({
     width:150,
     height:160
   },
-  inputViewparent1:{
-     marginTop:-35,
-     marginBottom:80,
-     width:"100%",
-     display:"flex",
-     alignItems:"center"
-  },
   inputViewparent:{
-     marginTop:-35,
-    //  marginBottom:80,
-     width:"100%",
-     display:"flex",
-     alignItems:"center"
-  },
-  inputView: {
-    width: '90%',
-  },
-  inputText: {
-    borderRadius:25,
-    borderWidth:2,
-    padding:11,
-    height: 50,
+    marginTop:15,
+    marginBottom:10,
     width:"100%",
-    
-  },
+    display:"flex",
+    flexDirection:"column",
+    // alignItems:"center"
+},
+labelText:{
+  marginLeft:25,
+  fontWeight:"bold",
+  fontSize:15,
+  marginBottom:5,
+},
+inputView: {
+   display:"flex",
+   width: '90%',
+   marginLeft:15
+ },
+ inputText: {
+   borderRadius:25,
+   borderWidth:2,
+   padding:15,
+   height: 50,
+   width:"100%",  
+ },
   registerBtn: {
     width: '90%',
     backgroundColor: '#000000',
