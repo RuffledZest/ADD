@@ -8,6 +8,9 @@ const Bottomnavigation = ({navigator}) => {
   const homepagehandler=()=>{
     navigator.navigate("mainpage");
   }
+  const projectpagehandler=()=>{
+    navigator.navigate("project");
+  }
   return (
     // row
      <View style={styles.row}>
@@ -24,10 +27,10 @@ const Bottomnavigation = ({navigator}) => {
          <Text>Post</Text>  
        </View>
        </TouchableOpacity>
-       <TouchableOpacity>
+       <TouchableOpacity onPress={projectpagehandler} >
        <View>
          <Image style={styles.irony} source={require("../assets/commenticon.jpg")}/>
-         <Text>Forum</Text>  
+         <Text>Projects</Text>  
        </View>
        </TouchableOpacity>
        {/* profile */}

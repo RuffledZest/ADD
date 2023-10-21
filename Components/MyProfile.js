@@ -136,8 +136,8 @@ const styles = StyleSheet.create({
   post:{
     // borderWidth:2,
     // borderColor:"#000000",
-    width:150,
-    height:150
+    width:190,
+    height:190
   },
   btns:{
     display:"flex",
@@ -162,16 +162,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 80,
   },
-  dummyedit:{
-   backgroundColor:"#000000",
-   color:"#FFFFFF",
-   width:120,
-   paddingLeft:20,
-   padding:10,
-   borderRadius:30,
-   height:40,
-    
-  },
   backarrow: {
     width: 32,
     marginLeft: 15,
@@ -187,6 +177,16 @@ const styles = StyleSheet.create({
     width: 105,
     height: 65,
   },
+  dummyedit:{
+  backgroundColor:"#000000",
+  color:"#FFFFFF",
+  width:120,
+  paddingLeft:20,
+  padding:10,
+  borderRadius:30,
+  height:40,
+  
+},
   aboutme: {
     backgroundColor: "#68bce4",
     borderBottomLeftRadius: 30,
