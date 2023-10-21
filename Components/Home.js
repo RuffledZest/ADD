@@ -6,6 +6,9 @@ const Home = ({navigation}) => {
   const registerpage=()=>{
     navigation.navigate("register1");
   }
+  const Loginpage=()=>{
+    navigation.navigate("login");
+  }
     return (
      
     <View style={styles.parentdiv} >
@@ -18,7 +21,7 @@ const Home = ({navigation}) => {
       
       {/*buttons*/}
       <View style={styles.btns}>
-      <TouchableOpacity style={styles.loginbtn}  >
+      <TouchableOpacity  onPress={Loginpage} style={styles.loginbtn}  >
         <Text style={styles.textcolor2}  >LOG IN</Text>
       </TouchableOpacity>
       <TouchableOpacity  onPress={registerpage} style={styles.regsiterbtn}>
