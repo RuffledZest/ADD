@@ -5,6 +5,7 @@ import Home from './Components/Home';
 import Register3 from './Components/Register3';
 import Login from './Components/Login';
 import Mainpage from './Components/Mainpage';
+import MyProfile from './Components/MyProfile';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ const AppNavigator = () => {
       <Stack.Screen name="home" options={{ headerShown: false }} component={Home} />
       <Stack.Screen name="login" options={{ headerShown: false }} component={Login} />
       <Stack.Screen name="mainpage" options={{ headerShown: false }} component={Mainpage} />
+      <Stack.Screen name="profile" options={{ headerShown: false }} component={MyProfile} />
       <Stack.Screen name="register1" options={{ headerShown: false }} component={Register} />
       <Stack.Screen name="register2"  options={{ headerShown: false }} component={Register2} />
       <Stack.Screen name="register3"  options={{ headerShown: false }} component={Register3} />
