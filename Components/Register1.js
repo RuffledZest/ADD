@@ -4,13 +4,19 @@ import { View, SafeAreaView ,Text, TextInput, TouchableOpacity, StyleSheet } fro
 // import { useNavigation } from '@react-navigation/native';
 
 const Register = ({navigation}) => {
-  const nextpagehandler=()=>{
+  const homepagehandler=()=>{
+    navigation.navigate('home');
+  }
+  const nextpagehandler=()=>{ 
     navigation.navigate('register2'); 
   }
   return (
     <View style={styles.container}>
       {/* main logo */}
       <View style={styles.mainLogocontainer}>
+        <TouchableOpacity onPress={homepagehandler}>
+        <Image  style={styles.backarrow} source={require("../assets/backarrow.jpg")}/>
+        </TouchableOpacity>
         <Image style={styles.mainlogo} source={require("../assets/mainlogo.png")}/>
       </View>
       {/* register and image components*/}
@@ -51,16 +57,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   mainLogocontainer:{
-    display:"flex",
+      display:"flex",
+      flexDirection:"row",
       alignItems:"center",
+      // justifyContent:"space-between",
       marginTop:55,
       width:"100%",
       height:80,
      
-      // borderColor:"#FF0000",
-      // borderWidth:2,
-  },
-  mainlogo:{
+    },
+    backarrow:{
+      width:32,
+      marginLeft:15,
+      height:25
+    },
+    mainlogo:{
+    // borderColor:"#FF0000",
+    // borderWidth:2,
+    display:"flex",
+    justifyContent:"flex-start",
+    // width:"80%",
+    marginLeft:90,
      width:105,
      height:65
   },

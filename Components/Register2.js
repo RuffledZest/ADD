@@ -6,8 +6,11 @@ const Register2 = ({navigation}) => {
   const register3handler=()=>{
     navigation.navigate("register3");
   }
+  const register1handler=()=>{
+    navigation.navigate("register1");
+  }
     return (
-    <View >
+    <View style={styles.background} >
         {/* bg Img */}
         {/* <View style={styles.bgImg}>
           <Image  source={require("../assets/dleaf.png")}/>
@@ -15,6 +18,9 @@ const Register2 = ({navigation}) => {
 
       {/* title logo */}
       <View style={styles.mainLogocontainer}>
+        <TouchableOpacity onPress={register1handler}>
+        <Image  style={styles.backarrow} source={require("../assets/backarrow.jpg")}/>
+        </TouchableOpacity>
         <Image style={styles.mainlogo} source={require("../assets/mainlogo.png")}/>
       </View>
         {/* text */}
@@ -65,13 +71,13 @@ const Register2 = ({navigation}) => {
 
 
     </View>
-    // </View>
-
-
-    // </ImageBackground>
   )
 };
 const styles = StyleSheet.create({
+    background:{
+        backgroundColor:"#FFFFFF",
+        height:"100%"
+    },
     container: {
       flex: 1,
       width:"100%",
@@ -79,31 +85,44 @@ const styles = StyleSheet.create({
       backgroundColor: '#FFFFFF',
       alignItems: 'center',
     },
-    
+    backarrow:{
+        width:32,
+        marginLeft:15,
+        height:25
+      },
     setprofileText:{
        fontSize:40,
        marginLeft:8,
-       marginTop:-65,
+       marginTop:10,
     //    borderColor:"#000000",
     //    borderWidth:2,
        
     },
     mainLogocontainer:{
         display:"flex",
+        flexDirection:"row",
         alignItems:"center",
+        // justifyContent:"space-between",
         marginTop:55,
         width:"100%",
-        height:180,
-    },
+        height:80,
+       
+      },
     mainlogo:{
-        width:105,
-        height:65
-    },
+        // borderColor:"#FF0000",
+        // borderWidth:2,
+        display:"flex",
+        justifyContent:"flex-start",
+        // width:"80%",
+        marginLeft:90,
+         width:105,
+         height:65
+      },
     bgImg:{
         position:"absolute",
         top:300,
         left:30,
-        transform: [{rotate: '-18deg'}],
+        // transform: [{rotate: '-18deg'}],
         // borderColor:"#000000",
         // borderWidth:2,
         display:"flex",
