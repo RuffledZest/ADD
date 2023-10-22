@@ -11,6 +11,9 @@ const Bottomnavigation = ({navigator}) => {
   const projectpagehandler=()=>{
     navigator.navigate("project");
   }
+  const posthandler=()=>{
+    navigator.navigate("post");
+  }
   return (
     // row
      <View style={styles.row}>
@@ -21,7 +24,7 @@ const Bottomnavigation = ({navigator}) => {
          <Text>Home</Text>  
        </View>
        </TouchableOpacity>
-       <TouchableOpacity>
+       <TouchableOpacity onPress={posthandler}>
        <View>
          <Image style={styles.irony} source={require("../assets/posticon.jpg")}/>
          <Text>Post</Text>  
